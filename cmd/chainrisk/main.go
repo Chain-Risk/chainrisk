@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jijo-OO7/chainrisk/internal/cli"
+	"github.com/Chain-Risk/chainrisk/internal/cli"
 )
 
 var version = "0.1.0"
@@ -38,28 +38,28 @@ func main() {
 		}
 		file := os.Args[2]
 		cli.RunSBOMInfo(file)
-	
+
 	case "blast":
-	if len(os.Args) < 4 {
-		fmt.Println("Usage: chainrisk blast <file> --target=<dependency>")
-		return
-	}
-
-	file := os.Args[2]
-
-	var target string
-	for _, arg := range os.Args[3:] {
-		if len(arg) > 9 && arg[:9] == "--target=" {
-			target = arg[9:]
+		if len(os.Args) < 4 {
+			fmt.Println("Usage: chainrisk blast <file> --target=<dependency>")
+			return
 		}
-	}
 
-	if target == "" {
-		fmt.Println("Error: --target is required")
-		return
-	}
+		file := os.Args[2]
 
-	cli.RunBlast(file, target)
+		var target string
+		for _, arg := range os.Args[3:] {
+			if len(arg) > 9 && arg[:9] == "--target=" {
+				target = arg[9:]
+			}
+		}
+
+		if target == "" {
+			fmt.Println("Error: --target is required")
+			return
+		}
+
+		cli.RunBlast(file, target)
 
 	default:
 		fmt.Println("Unknown command:", command)

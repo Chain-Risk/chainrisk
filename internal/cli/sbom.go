@@ -11,9 +11,9 @@ package cli
 
 import (
 	"fmt"
-    "sort"
-	"github.com/jijo-OO7/chainrisk/internal/graph"
-	"github.com/jijo-OO7/chainrisk/internal/sbom"
+	"github.com/Chain-Risk/chainrisk/internal/graph"
+	"github.com/Chain-Risk/chainrisk/internal/sbom"
+	"sort"
 )
 /*TO DO SPDX incorporation along with jsongold*/
 func RunSBOMInfo(file string) {
@@ -36,7 +36,7 @@ func RunSBOMInfo(file string) {
 	}
 	sort.Strings(nodes)
 
-	fmt.Println("\n🔗 Dependency Graph:\n")
+	fmt.Println("\n🔗 Dependency Graph:")
 
 	for _, node := range nodes {
 		for _, n := range g.Adjacency[node] {
@@ -44,4 +44,3 @@ func RunSBOMInfo(file string) {
 		}
 	}
 }
-

@@ -9,13 +9,13 @@ http://www.apache.org/licenses/LICENSE-2.0
 */
 package graph
 
-import "github.com/jijo-OO7/chainrisk/internal/sbom"
+import "github.com/Chain-Risk/chainrisk/internal/sbom"
 
 // BuildGraph constructs dependency graph from SBOM
 func BuildGraph(s *sbom.SBOM) *Graph {
 	g := &Graph{
 		Adjacency: make(map[string][]string),
-		Reverse: make(map[string][]string),
+		Reverse:   make(map[string][]string),
 	}
 
 	// Build package lookup: SPDXID -> name
@@ -31,7 +31,7 @@ func BuildGraph(s *sbom.SBOM) *Graph {
 			g.Adjacency[name] = []string{}
 		}
 	}
- 
+
 	// Build edges
 	for _, rel := range s.Relationships {
 		from := pkgMap[rel.SpdxElementID]
@@ -39,8 +39,8 @@ func BuildGraph(s *sbom.SBOM) *Graph {
 
 		if from != "" && to != "" {
 			g.Adjacency[from] = append(g.Adjacency[from], to)
-            //for balast radius 
-            g.Reverse[to] = append(g.Reverse[to], from)
+			//for balast radius
+			g.Reverse[to] = append(g.Reverse[to], from)
 		}
 	}
 

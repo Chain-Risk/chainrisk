@@ -20,6 +20,6 @@ func TestParseSBOM(t *testing.T) {
 		t.Fatalf("Expected no errors, got: %v ", err)
 	}
 	if len(sbom.Packages) != 3 {
-		t.Fatalf("expected 3 packages, got %d", len(sbom.packages))
+		t.Fatalf("expected 3 packages, got %d", len(sbom.Packages))
 	}
 }

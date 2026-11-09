@@ -22,12 +22,11 @@ func PrintHeader(title string, emoji string) {
 func PrintSection(title string, emoji string) {
 	if emoji != "" {
 		fmt.Println("-----------------------------")
-	    fmt.Printf("%s %s\n", emoji, title)
-	    fmt.Println("-----------------------------")
+		fmt.Printf("%s %s\n", emoji, title)
+		fmt.Println("-----------------------------")
 	} else {
 		fmt.Println("-----------------------------")
-	    fmt.Println(title)
-	    fmt.Println("-----------------------------")
+		fmt.Println(title)
+		fmt.Println("-----------------------------")
 	}
 }
-

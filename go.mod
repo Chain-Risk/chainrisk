@@ -1,3 +1,3 @@
-module github.com/jijo-OO7/chainrisk
+module github.com/Chain-Risk/chainrisk
 
 go 1.22.2
