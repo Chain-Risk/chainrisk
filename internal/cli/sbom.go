@@ -15,6 +15,7 @@ import (
 	"github.com/Chain-Risk/chainrisk/internal/sbom"
 	"sort"
 )
+
 /*TO DO SPDX incorporation along with jsongold*/
 func RunSBOMInfo(file string) {
 	result, err := sbom.ParseSBOM(file)
