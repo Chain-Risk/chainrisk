@@ -129,7 +129,7 @@ chainrisk blast <file> --target=<dependency>
 ### Using Go (recommended)
 
 ```bash
-go install github.com/jijo-OO7/chainrisk/cmd/chainrisk@latest
+go install github.com/Chain-Risk/chainrisk/cmd/chainrisk@latest
 ```
 
 ---
@@ -137,7 +137,7 @@ go install github.com/jijo-OO7/chainrisk/cmd/chainrisk@latest
 ### From source
 
 ```bash
-git clone https://github.com/jijo-OO7/chainrisk.git
+git clone https://github.com/Chain-Risk/chainrisk.git
 cd chainrisk
 go build -o chainrisk ./cmd/chainrisk
 ```
